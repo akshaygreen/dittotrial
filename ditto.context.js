@@ -10,9 +10,9 @@ export const DittoProvider = ({children}) => {
   const [items, setItems] = useState([]);
 
   const identity = {
-    type: 'onlinePlayground',
+    type: 'onlinePlayground', // real business use, real time connection with the database
     appID: '2e0dc36b-e9b2-4bd8-86fd-1f5c9c2bc753',
-    token: '8fee3d71-e4e1-452d-80af-55b907fd0d4a',
+    token: '8fee3d71-e4e1-452d-80af-55b907fd0d4a', // authentication modes
   };
   const ditto = new Ditto(identity);
 
@@ -105,7 +105,7 @@ export const DittoProvider = ({children}) => {
             documentId: item._id,
           },
         );
-        console.log(result, itme._id);
+        console.log(result, item._id);
       });
       console.log('All documents have been evicted.');
     } catch (error) {
